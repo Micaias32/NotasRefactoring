@@ -3,14 +3,13 @@ import ruim.GerenciadorDeNotas;
 void main() {
     IO.println("Bem-vindo ao programa que verifica sua nota!");
     float min = Float.parseFloat(IO.readln("Digite a menor nota possível: "));
-    float max;
-    do {
-        max = Float.parseFloat(IO.readln("Digite o maior valor possível: "));
-    } while (max < min);
-    float passa;
-    do {
-        passa = Float.parseFloat(IO.readln("Digite a nota de corte: "));
-    } while (passa < min || passa > max);
+    float max = Float.parseFloat(IO.readln("Digite o maior valor possível: "));
+    float passa = Float.parseFloat(IO.readln("Digite a nota de corte: "));
+
+    if (min > max || passa > max || passa < min) {
+        IO.println("Valores Inválidos");
+        return;
+    }
 
     GerenciadorDeNotas g = new GerenciadorDeNotas();
     g.min = min;
