@@ -8,6 +8,6 @@ Para compilar este projeto, use o **IntelliJ IDEA (Community ou Ultimate)**.
 
 Este projeto também usa a SDK Java 25, então talvez você tenha que instalar ela (mas o IntelliJ provavelmente vai baixar para você).
 
-# Contribuições
+# Como Contribuir
 
 Não.
