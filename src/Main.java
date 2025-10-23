@@ -12,9 +12,9 @@ void main() {
     }
 
     GerenciadorDeNotas g = new GerenciadorDeNotas();
-    g.min = min;
-    g.max = max;
-    g.passa = passa;
+    g.notaMinima = min;
+    g.notaMaxima = max;
+    g.notaDeCorte = passa;
 
     float n = Float.parseFloat(IO.readln("Digite a nota a ser avaliada: "));
     if (g.verificarNota(n)) {

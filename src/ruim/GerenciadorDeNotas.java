@@ -6,27 +6,27 @@ public class GerenciadorDeNotas {
     // Menor nota possível, se a nota a testar
     // for menor que essa, um erro deve se informado.
     // O valor não deve ser maior que max
-    public float min;
+    public float notaMinima;
 
     // Maior nota possível, se a nota a testar
     // for maior que essa, um erro deve se informado.
     // O valor não deve ser maior que min
-    public float max;
+    public float notaMaxima;
 
     // Nota de corte, não deve ser menor que min
     // ou maior que max
-    public float passa;
+    public float notaDeCorte;
 
     // Verifica se uma nota está acima da nota de corte.
     // Espera-se que os valores de min, max e passa estejam atribuídos
     // e que sejam válidos
     public boolean verificarNota(float nota) {
         // a nota não pode ser menor que a mínima
-        if (nota >= min) {
+        if (nota >= notaMinima) {
             // a nota não pode ser maior que a máxima:
-            if (nota <= max) {
+            if (nota <= notaMaxima) {
                 // se a nota for maior ou igual à nota de corte:
-                if (nota >= passa) {
+                if (nota >= notaDeCorte) {
                     // retornamos verdadeiro (true)
                     return true;
                 // Senão:

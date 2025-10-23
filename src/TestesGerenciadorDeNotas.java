@@ -49,11 +49,11 @@ void main() {
     System.out.printf("  Falhas:  %s%d%s\n", RED, (total - sucesso), RESET);
 }
 
-private static GerenciadorDeNotas criar(float min, float max, float passa) {
+private static GerenciadorDeNotas criar(float notaMinima, float notaMaxima, float notaDeCorte) {
     var g = new GerenciadorDeNotas();
-    g.min = min;
-    g.max = max;
-    g.passa = passa;
+    g.notaMinima = notaMinima;
+    g.notaMaxima = notaMaxima;
+    g.notaDeCorte = notaDeCorte;
     return g;
 }
 
