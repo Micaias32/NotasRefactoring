@@ -1,25 +1,53 @@
 package ruim;
 
-// Verifica se uma nota passa na matéria
-// O usuário deve informar a nota mínima, máxima, e a nota de corte
+/**
+ * @author Micaias
+ * <p>
+ * Verifica se uma nota passa na matéria
+ * </p>
+ * <p>
+ * O objeto tem uma invariância que deve ser sequida
+ * </p>
+ * notaMinima ≤ notaDeCorte ≤ notaMaxima
+ */
 public class GerenciadorDeNotas {
-    // Menor nota possível, se a nota a testar
-    // for menor que essa, um erro deve se informado.
-    // O valor não deve ser maior que max
+
+    /**
+     * <p>
+     * O menor valor que a nota a ser verificada pode ser.
+     * </p>
+     * <h1>Invariância:</h1>
+     * notaMinima ≤ notaDeCorte ≤ notaMaxima
+     */
     public float notaMinima;
 
-    // Maior nota possível, se a nota a testar
-    // for maior que essa, um erro deve se informado.
-    // O valor não deve ser maior que min
+    /**
+     * <p>
+     * O maior valor que a nota a ser verificada pode ser.
+     * </p>
+     * <h1>Invariância:</h1>
+     * notaMinima ≤ notaDeCorte ≤ notaMaxima
+     */
     public float notaMaxima;
 
-    // Nota de corte, não deve ser menor que min
-    // ou maior que max
+    /**
+     * <p>
+     * A nota a ser verificada deve ser igual ou maior
+     * que essa para que verificarNota() retorne verdadeiro.
+     * </p>
+     * <h1>Invariância:</h1>
+     * notaMinima ≤ notaDeCorte ≤ notaMaxima
+     */
     public float notaDeCorte;
 
-    // Verifica se uma nota está acima da nota de corte.
-    // Espera-se que os valores de min, max e passa estejam atribuídos
-    // e que sejam válidos
+    /**
+     * Verifica se uma nota é válida e passa a nota de corte.
+     * @param nota                  A nota a ser verificada.
+     * @return                      Se a nota for maior ou igual que this.notaDeCorte,
+     * retorna true, caso o contrário, retorna false.
+     * @throws RuntimeException     Se a nota for menor que this.notaMinima ou
+     * maior que this.notaMaxima.
+     */
     public boolean verificarNota(float nota) {
         // a nota não pode ser menor que a mínima
         if (nota >= notaMinima) {
