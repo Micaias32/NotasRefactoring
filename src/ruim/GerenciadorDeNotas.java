@@ -1,5 +1,8 @@
 package ruim;
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.Nullable;
+
 /**
  * @author Micaias
  * <p>
@@ -19,7 +22,7 @@ public class GerenciadorDeNotas {
      * <h1>Invariância:</h1>
      * notaMinima ≤ notaDeCorte ≤ notaMaxima
      */
-    public float notaMinima;
+    private final float notaMinima;
 
     /**
      * <p>
@@ -28,7 +31,7 @@ public class GerenciadorDeNotas {
      * <h1>Invariância:</h1>
      * notaMinima ≤ notaDeCorte ≤ notaMaxima
      */
-    public float notaMaxima;
+    private final float notaMaxima;
 
     /**
      * <p>
@@ -38,7 +41,25 @@ public class GerenciadorDeNotas {
      * <h1>Invariância:</h1>
      * notaMinima ≤ notaDeCorte ≤ notaMaxima
      */
-    public float notaDeCorte;
+    private final float notaDeCorte;
+
+    private GerenciadorDeNotas(float notaMinima, float notaMaxima, float notaDeCorte) {
+        this.notaMinima = notaMinima;
+        this.notaMaxima = notaMaxima;
+        this.notaDeCorte = notaDeCorte;
+    }
+
+    @Nullable
+    @Contract(pure = true)
+    public static GerenciadorDeNotas novo(float notaMinima, float notaMaxima, float notaDeCorte) {
+        boolean invarianciaMantida = notaMinima <= notaDeCorte &&
+                notaMinima <= notaMaxima &&
+                notaDeCorte <= notaMaxima;
+        if (!invarianciaMantida) {
+            return null;
+        }
+        return new GerenciadorDeNotas(notaMinima, notaMaxima, notaDeCorte);
+    }
 
     /**
      * Verifica se uma nota é válida e passa a nota de corte.
