@@ -70,18 +70,12 @@ public class GerenciadorDeNotas {
      * maior que this.notaMaxima.
      */
     public boolean verificarNota(float nota) {
-        if (nota >= notaMinima) {
-            if (nota <= notaMaxima) {
-                if (nota >= notaDeCorte) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } else {
-                throw new RuntimeException("nota maior que o máximo");
-            }
-        } else {
+        if (!(nota >= notaMinima)) {
             throw new RuntimeException("nota menor que o mínimo");
         }
+        if (!(nota <= notaMaxima)) {
+            throw new RuntimeException("nota maior que o máximo");
+        }
+        return nota >= notaDeCorte;
     }
 }
